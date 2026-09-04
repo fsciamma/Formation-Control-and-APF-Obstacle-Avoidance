@@ -31,7 +31,7 @@ where $\hat{\mathbf{n}} = \frac{\mathbf{q} - \mathbf{c}^\star}{\Vert \mathbf{q} 
 
 Formation control is achieved through mutual distance constraints over a directed acyclic graph (DAG). For each constraint between parent $i$ and child $j$ with desired distance $d_{ij}$:
 
-$$\mathbf{u}_{j,\text{form}} = -k (\|\mathbf{p}_i - \mathbf{p}_j\|^2 - d_{ij}^2)(\mathbf{p}_j - \mathbf{p}_i)$$
+$$\mathbf{u}_{j,\text{form}} = -k (\Vert \mathbf{p}_i - \mathbf{p}_j \Vert^2 - d_{ij}^2)(\mathbf{p}_j - \mathbf{p}_i)$$
 
 ![Triangle Formation Control](assets/triangle_formation.gif)
 
@@ -64,7 +64,9 @@ Distance-based potential energy surfaces possess symmetric, isometric local mini
 2. **Transverse Momentum Governs Basin Attraction:** Launching below the gate axis ($y_0 = -1.0$, Cases D & G) induces positive lateral approach velocity and obstacle interaction forces that channel the post-gate re-expansion into the downward-tilted minimum. Conversely, launching above ($y_0 = +1.0$, Cases E & F) directs the fleet into the upward-tilted minimum.
 3. **Topological Invariance Under Agent Permutation:** Cases D and G (and likewise E and F) share identical initial coordinate footprints but with transposed agent indices (top vs bottom wings). Both converge to the exact same geometric formation, proving that global basin dynamics dominate over individual agent assignment permutations.
 4. **Information Bottleneck:** Bottleneck passage compresses the 2D formation into a 1D line, but transverse momentum and asymmetric boundary repulsions preserve sufficient phase-space memory to guide post-gate expansion.
-5. **Mitigation for Real Robotics:** When unique agent roles (e.g. left vs right wings) are mandatory, pure distance-based control ($\|\mathbf{p}_i - \mathbf{p}_j\| = d_{ij}$) must be augmented with signed bearing/angle constraints or displacement consensus $\mathbf{R}(\theta)\mathbf{z}^*$.
+5. **Mitigation for Real Robotics:** When unique agent roles (e.g. left vs right wings) are mandatory, pure distance-based control:
+   $$\Vert \mathbf{p}_i - \mathbf{p}_j \Vert = d_{ij}$$
+   must be augmented with signed bearing/angle constraints or displacement consensus $\mathbf{R}(\theta)\mathbf{z}^*$.
 
 ![Formation Symmetry Comparison](assets/formation_symmetry_comparison.png)
 
