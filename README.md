@@ -19,9 +19,9 @@ Obstacles and neighbouring agents generate repulsive potential fields $J_{\text{
 
 $$J_{\text{rep}}(\mathbf{q}) = \frac{1}{\beta} \left( \frac{1}{d(\mathbf{q}) - \delta} - \frac{1}{\delta_0 - \delta} \right)^\beta$$
 
-$$\mathbf{F}_{\text{rep}}(\mathbf{q}) = -\nabla J_{\text{rep}}(\mathbf{q}) = \frac{1}{(d(\mathbf{q}) - \delta)^2} \left( \frac{1}{d(\mathbf{q}) - \delta} - \frac{1}{\delta_0 - \delta} \right)^{\beta - 1} \frac{\mathbf{q} - \mathbf{c}^*}{\|\mathbf{q} - \mathbf{c}^*\|}$$
+$$\mathbf{F}_{\text{rep}}(\mathbf{q}) = -\nabla J_{\text{rep}}(\mathbf{q}) = \frac{1}{(d(\mathbf{q}) - \delta)^2} \left( \frac{1}{d(\mathbf{q}) - \delta} - \frac{1}{\delta_0 - \delta} \right)^{\beta - 1} \hat{\mathbf{n}}$$
 
-where $\delta$ is the minimum safe clearance distance and $\mathbf{c}^*$ is the closest Euclidean projection on the obstacle surface.
+where $\hat{\mathbf{n}} = \frac{\mathbf{q} - \mathbf{c}^\star}{\Vert \mathbf{q} - \mathbf{c}^\star \Vert}$ is the unit normal pointing away from the closest Euclidean projection $\mathbf{c}^\star$ on the obstacle surface, and $\delta$ is the minimum safe clearance distance.
 
 ![Two APF Agents Avoiding Each Other](assets/two_agents_apf.gif)
 
